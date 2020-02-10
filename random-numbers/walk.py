@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 np.random.seed(123)
 random_walk = [0]
@@ -12,7 +13,7 @@ for x in range(100):
 
     # Determine next step
     if dice <= 2:
-        step = step - 1
+        step = max(0, step - 1)
     elif dice <= 5:
         step = step + 1
     else:
@@ -23,3 +24,6 @@ for x in range(100):
 
 # Print random_walk
 print(random_walk)
+
+plt.plot(random_walk)
+plt.show()
